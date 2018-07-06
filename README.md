@@ -11,7 +11,7 @@ Testing is an important part of the development process and this project aims to
 - menu hiding/showing
 ## How to run the application
 You can open the live version of the project or clone/download the repository to open on your local computer: <br>
-- Open project's live version *here* <br>
+- Open project's live version [*here*](https://elenanovikova.github.io/Feed-Reader-Test/) <br>
 **OR**
 - *Git clone* https://github.com/ElenaNovikova/Feed-Reader-Test/ <br>
 If the clone was successful, a new sub-directory appears on your local drive.
