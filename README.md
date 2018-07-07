@@ -16,6 +16,9 @@ You can open the live version of the project or clone/download the repository to
 - *Git clone* https://github.com/ElenaNovikova/Feed-Reader-Test/ <br>
 If the clone was successful, a new sub-directory appears on your local drive.
 - Open the **index.html** file.
+## Dependencies
+- The application uses Jasmine 2.1.2 framework to make the tests
+- The application uses jQuery 2.1.1 library
 ## Licensing
 *Copyright 2018 Elena Novikova* <br>
 Licensed under the Educational Community License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
