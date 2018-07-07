@@ -77,6 +77,16 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+         beforeEach(function(done) {
+             loadFeed(0, function() {
+                done();  // Jasmine's asynchronous function
+             });
+         });
+
+         it('ensures that exists at least a single .entry element within the .feed container', function(done) {
+           expect($('.feed .entry').length).toBeGreaterThan(0);
+              done();
+         });
     });
 
 
@@ -95,13 +105,14 @@ $(function() {
                  feedOne = $('.feed').html();
                  loadFeed(1, function() {
                     feedTwo = $('.feed').html();
-                    done();
+                    done();  // Jasmine's asynchronous function
                  });
              });
          });
 
-         it('a new feed is loaded and content changes', function() {
+         it('a new feed is loaded and content changes', function(done) {
              expect(feedOne).not.toEqual(feedTwo);
+             done();  // Jasmine's asynchronous function
          });
     });
 
