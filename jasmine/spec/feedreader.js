@@ -34,7 +34,7 @@ $(function() {
             // forEach loop method
             allFeeds.forEach(function(item) {
                 expect(item.url).toBeDefined();
-                /*expect(item.url).not.toBe('');*/
+                //expect(item.url).not.toBe('');
                 expect(item.url.length).not.toBe(0);
             });
         });
@@ -70,7 +70,12 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
          it('should change visibility when the menu icon is clicked', function() {
-            //
+             // menu is clicked and then openes
+             $('.menu-icon-link').click();
+             expect($('body').hasClass('menu-hidden')).toBe(false);
+             // menu is clicked again and then hidden
+             $('.menu-icon-link').click();
+             expect($('body').hasClass('menu-hidden')).toBe(true);
          });
     });
 
