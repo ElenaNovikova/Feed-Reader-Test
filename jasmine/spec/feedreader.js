@@ -43,13 +43,13 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-         it('loops through each feed and has a name defined and not empty', function() {
-             // forEach loop method
-             allFeeds.forEach(function(item) {
-                 expect(item.name).toBeDefined();
-                 expect(item.name.length).not.toBe(0);
-             });
-         });
+        it('loops through each feed and has a name defined and not empty', function() {
+            // forEach loop method
+            allFeeds.forEach(function(item) {
+                expect(item.name).toBeDefined();
+                expect(item.name.length).not.toBe(0);
+            });
+        });
     });
 
 
@@ -60,12 +60,18 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+        it('should hide the menu element by default', function() {
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+         it('should change visibility when the menu icon is clicked', function() {
+            //
+         });
     });
 
 
@@ -77,16 +83,16 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-         beforeEach(function(done) {
-             loadFeed(0, function() {
-                done();  // Jasmine's asynchronous function
-             });
-         });
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+               done();  // Jasmine's asynchronous function
+            });
+        });
 
-         it('ensures that exists at least a single .entry element within the .feed container', function(done) {
-           expect($('.feed .entry').length).toBeGreaterThan(0);
-              done();
-         });
+        it('ensures that exists at least a single .entry element within the .feed container', function(done) {
+          expect($('.feed .entry').length).toBeGreaterThan(0);
+             done();
+        });
     });
 
 
@@ -96,24 +102,24 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-         // variables that hold the values of two feeds
-         var feedOne,
-             feedTwo;
+        // variables that hold the values of two feeds
+        var feedOne,
+            feedTwo;
 
-         beforeEach(function(done) {
-             loadFeed(0, function() {
-                 feedOne = $('.feed').html();
-                 loadFeed(1, function() {
-                    feedTwo = $('.feed').html();
-                    done();  // Jasmine's asynchronous function
-                 });
-             });
-         });
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                feedOne = $('.feed').html();
+                loadFeed(1, function() {
+                   feedTwo = $('.feed').html();
+                   done();  // Jasmine's asynchronous function
+                });
+            });
+        });
 
-         it('a new feed is loaded and content changes', function(done) {
-             expect(feedOne).not.toEqual(feedTwo);
-             done();  // Jasmine's asynchronous function
-         });
+        it('a new feed is loaded and content changes', function(done) {
+            expect(feedOne).not.toEqual(feedTwo);
+            done();  // Jasmine's asynchronous function
+        });
     });
 
 }());
